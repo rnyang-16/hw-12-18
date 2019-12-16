@@ -1,0 +1,46 @@
+input{
+    height: 250px;
+    width: 100%;
+}
+
+.header-content{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.dashed {
+    border-style: dashed;
+    color: gray;
+}
+
+#password{
+    text-align: center;
+    position: relative;
+}
+
+#generate{
+    background-color: #b30000;
+    border: none;
+    color: white;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 50px;
+}
+
+#copy{
+    background-color: #cccccc;
+    border: none;
+    color: white;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 50px;
+}
