@@ -36,6 +36,7 @@ function promptCharTypes() {
     };
 }
 
+
 function randomChoice (arr) {
     return arr[Math.floor(Math.random()*arr.length)];
 }  
@@ -43,25 +44,32 @@ function randomChoice (arr) {
 function getRandomPassword(pw_len, char_types) {
     var charset = '';
     if (char_types['useSpecialChar']){
-    charset = charset.concat(CHARACTER_SETS[3,2]);
+        charset = charset.concat(CHARACTER_SETS[3][2]);
     }
+    console.log(charset);
     if (char_types['useNumChar']){
-    charset = charset.concat(CHARACTER_SETS[0,2]);
+        charset = charset.concat(CHARACTER_SETS[0][2]);
     }
+    console.log(charset);
     if (char_types['useLowerChar']){
-    charset = charset.concat(CHARACTER_SETS[1,2]);
+        charset = charset.concat(CHARACTER_SETS[1][2]);
     }
+    console.log(charset);
     if (char_types['useUpperChar']){
-    charset = charset.concat(CHARACTER_SETS[2,2]);
+        charset = charset.concat(CHARACTER_SETS[2][2]);
     }
+    console.log(charset);
     charset = charset.split('')
     console.log(charset);
 
     password = ''
 
     var i;
-    for (i = 0; i < inp_len.length; i += 1){
-    password = password.concat(randomChoice(charset));
+    console.log(pw_len);
+
+    for (i = 0; i < pw_len; i += 1){
+        password = password.concat(randomChoice(charset));
+        console.log(i);
     }
 
     document.getElementById("password").setAttribute("value", password);
@@ -69,12 +77,13 @@ function getRandomPassword(pw_len, char_types) {
 
 
 function passwordGenerator() {
-    var inp_len = promptPasswordLength();
-    if (inp_len != null){
-    char_types = promptCharTypes();
-    }
-    if (char_types != null){
-        getRandomPassword(inp_len, char_types);
+    var usrPW_len = promptPasswordLength();
+
+    if (usrPW_len != null){
+        char_types = promptCharTypes();
+        if (char_types != null){
+            getRandomPassword(usrPW_len, char_types);
+        }
     }
     return null;       
 }
@@ -85,9 +94,9 @@ function copyToClipboard(){
     copyText.setSelectionRange(0, 99999); 
     document.execCommand("copy");
     if (copyText.value.length == 0) {
-    alert("Please generate a password first");
+        alert("Please generate a password first");
     }
     else {
-    alert("Copied the text: " + copyText.value);
+        alert("Copied the text: " + copyText.value);
     }
 }
