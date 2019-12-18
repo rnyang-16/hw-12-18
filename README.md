@@ -2,6 +2,7 @@
 # Password Generator
 
 ## Description 
+![ScreenShot](assets/screenshot.png)
 
 Users will be prompted to choose from the following password criteria:
 
@@ -32,7 +33,8 @@ and open index.html in your favorite browser.
 
 ## Usage 
 
-Open index.html in your favorite browser and click on whatever part that you are interested.
+Open index.html in your favorite browser and click on whatever part that you are interested.<br>
+Users can also use the github URL to find the code. https://github.com/rnyang-16/hw-12-18
 
 ## Credits
 
